@@ -22,7 +22,7 @@ function createOutreachDates(date) {
 		currentDate = outreachDates[outreachDates.length-1];
 		console.log(step + " currentDate: " + currentDate);
 		// Runs 6 times
-		nextDate = new Date();
+		nextDate = new Date(currentDate);
 		nextDate.setDate(currentDate.getDate() + 2);
 		console.log(step + " nextDate: " + nextDate);
 		// if sat, add 2 days to get monday
