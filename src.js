@@ -23,7 +23,7 @@ function createOutreachDates(date) {
 		console.log(step + " currentDate: " + currentDate);
 		// Runs 6 times
 		nextDate = new Date(currentDate);
-		nextDate.setDate(currentDate.getDate() + 2);
+		nextDate.setDate(currentDate.getDate() + 4);
 		console.log(step + " nextDate: " + nextDate);
 		// if sat, add 2 days to get monday
 		// Gets the current day name:  Sunday - Saturday : returns 0 - 6
@@ -38,6 +38,10 @@ function createOutreachDates(date) {
 		}
 		outreachDates.push(nextDate);
 	}
+	// recycle date
+	recycleDate = new Date(date)
+	recycleDate.setDate(recycleDate.getDate() + 30);
+	outreachDates.push(recycleDate)
 	return outreachDates; 
 }
 
@@ -48,7 +52,7 @@ function convertAllDates(outreachDates){
 
 function updateDateTable(outreachDates){
 	console.log(outreachDates);
-	for (let step = 0; step < 7; step++){
+	for (let step = 0; step < 8; step++){
 		document.getElementById("o"+step.toString()).innerHTML = outreachDates[step]
 	}
 }
